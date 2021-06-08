@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.serratec.ApirRestcurso.exception.ResourceBadRequestException;
 import br.com.serratec.ApirRestcurso.model.Aluno;
 import br.com.serratec.ApirRestcurso.repository.AlunoRepository;
 
@@ -22,7 +23,11 @@ public class AlunoService {
     public Aluno adicionar(Aluno aluno){
         aluno.setId(null);
 
-        return null;
+        if(!aluno.validoParaCadastro()){
+            throw new ResourceBadRequestException("O campo nome são obrigatórios!");
+        }
+
+        return this._alunoRepository.save(aluno);
     }
 
 }

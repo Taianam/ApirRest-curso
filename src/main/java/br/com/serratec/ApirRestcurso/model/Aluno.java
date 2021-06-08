@@ -52,4 +52,7 @@ public class Aluno {
         this.idade = idade;
     }
 
+    public boolean validoParaCadastro() {
+		return (!this.nome.isEmpty());
+	}
 }
