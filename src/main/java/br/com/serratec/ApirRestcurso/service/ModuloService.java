@@ -6,6 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.com.serratec.ApirRestcurso.exception.ResourceBadRequestException;
+import br.com.serratec.ApirRestcurso.exception.ResourceNotFoundException;
 import br.com.serratec.ApirRestcurso.model.Modulo;
 import br.com.serratec.ApirRestcurso.repository.ModuloRepository;
 
@@ -33,13 +35,13 @@ public class ModuloService {
 		Optional<Modulo> modulo = this._moduloRepository.findById(id);
 		
 		if (modulo.isEmpty()) {
-			throw new RuntimeException();
+			throw new ResourceNotFoundException();
 		}
 	}
 	
 	private void verificarSeModuloEValido(Modulo modulo) {
 		if(modulo.getDescricao() == null || modulo.getDescricao() == "" || modulo.getListaDeAulas() == null) {
-			throw new RuntimeException();
+			throw new ResourceBadRequestException();
 		}
 	}
 }

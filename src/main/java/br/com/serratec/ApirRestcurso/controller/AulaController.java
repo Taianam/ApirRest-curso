@@ -11,34 +11,34 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.serratec.ApirRestcurso.model.Modulo;
-import br.com.serratec.ApirRestcurso.service.ModuloService;
+import br.com.serratec.ApirRestcurso.model.Aula;
+import br.com.serratec.ApirRestcurso.service.AulaService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-@Api(value = "Api para Modulos")
+@Api(value = "API para aulas")
 @RestController
-@RequestMapping(value = "/api/modulos")
-public class ModuloController {
+@RequestMapping(value = "api/aulas")
+public class AulaController {
 
 	@Autowired
-	ModuloService _moduloService;
+	AulaService _aulaService;
 	
-	@ApiOperation(value = "Obtem todos os modulos")
+	@ApiOperation(value = "Obtem todas as aulas")
 	@GetMapping
-	public List<Modulo> obter(){
-		return this._moduloService.obter();
+	public List<Aula> obter(){
+		return this._aulaService.obter();
 	}
 	
-	@ApiOperation(value = "Obtem um modulo po ID")
+	@ApiOperation(value = "Obtem uma aula po ID")
 	@GetMapping(value = "/{id}")
-	public Optional<Modulo> obter(@PathVariable(value = "id") Long id) {
-		return this._moduloService.obter(id);
+	public Optional<Aula> obter(@PathVariable(value = "id")Long id) {
+		return this._aulaService.obter(id);
 	}
 	
-	@ApiOperation(value = "Adiciona um novo modulo")
+	@ApiOperation(value = "Adiciona uma nova aula")
 	@PostMapping
-	public Modulo adicionar(@RequestBody Modulo modulo) {
-		return this._moduloService.adicionar(modulo);
+	public Aula obter(@RequestBody Aula aula) {
+		return this._aulaService.adicionar(aula);
 	}
 }
