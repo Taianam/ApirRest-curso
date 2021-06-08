@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,7 +17,11 @@ public class Curso {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	private String descricao;
+	
+	@OneToMany(mappedBy = "curso")
 	private List<Modulo> modulos;
+	
+	@OneToMany(mappedBy = "curso")
 	private List<Aluno> Alunos;
 	
 	

@@ -30,11 +30,11 @@ public class CursoController {
 		return this._cursoService.obter();
 	}
 	
-	@ApiOperation("Método para visualizar um curso atráves do id")
-	@GetMapping
-	public Optional<Curso> obter(Long id) {
-		return this._cursoService.obter(id);
-	}
+//	@ApiOperation("Método para visualizar um curso atráves do id")
+//	@GetMapping
+//	public Optional<Curso> obter(Long id) {
+//		return this._cursoService.obter(id);
+//	}
 	
 	@ApiOperation("Método para adicionar novo curso")
 	@PostMapping

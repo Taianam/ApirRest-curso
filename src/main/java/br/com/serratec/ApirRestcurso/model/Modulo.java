@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +20,14 @@ public class Modulo {
 	private Long id;
 
 	private String descricao;
+	
+	@ManyToOne
+	@JoinColumn(name="curso_id")
+	private Curso curso;
+	
+	
+	
+	@OneToMany(mappedBy = "modulo")
 	private List<Aula> listaDeAulas;
 
 	public Modulo() {
