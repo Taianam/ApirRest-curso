@@ -31,13 +31,13 @@ public class SwagerConfig {
 	}
 	private ApiInfo info() {
 		return new ApiInfo(
-				"SerraFoot API REST",
-				"API REST de cadastro de Jogadores",
+				"API REST- CURSO",
+				"API REST de cadastro curso",
 				"1.0",
 				"Termos de Serviços",
-				new Contact("Weberson Rodrigues", 
-						"https://www.linkedin.com/in/weberson-rodrigues/",
-						"weberson.oliveira@docente.firjan.senai.br"),
+				new Contact("Name NOT-FOUND", 
+						"https://www.linkedin.com/in//",
+						""),
 				"Apache License Version 2.0",
 				"https://www.apache.org/licesen.html", new ArrayList<VendorExtension>());
 	}
